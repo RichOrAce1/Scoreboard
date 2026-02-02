@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page background and alignment */
+body {
+    background-color: #f4f4f4; /* Light background */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Scoreboard container */
+div {
+    display: inline-block;
+    width: 300px;
+    height: 200px;
+    margin: 20px;
+    background-color: #003366; /* Dark blue background */
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative; /* To position the black box relative to the scoreboard */
+}
+
+/* Team name styling */
+h1 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Score counter styling with black box behind the numbers */
+h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 10px 0;
+    letter-spacing: 2px;
+    color: #e60000; /* Red for score numbers */
+    font-family: 'Press Start 2P', sans-serif; /* Digital font style */
+    position: relative; /* Position the number relative to the container */
+}
+
+/* Black box behind the score */
+h2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000000; /* Black box */
+    z-index: -1; /* Place the black box behind the number */
+    border-radius: 6px; /* Rounded corners of the box */
+    padding: 10px 0; /* Adjust the padding around the numbers */
+}
+
+/* Buttons Styling */
+button {
+    width: 50px;
+    height: 40px;
+    margin: 5px;
+    background-color: #e60000; /* Red background */
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #d90000;
+}
+
+button:active {
+    transform: translateY(2px);
+}
+body{
+    background-color: black;
+}
+
+
+        
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Home</h1>
+        <h2 id="homeCounter">0</h2>
+        <button onclick="home1()">+1</button>
+        <button onclick="home2()">+2</button>
+        <button onclick="home3()">+3</button>
+    </div>
+     <div>
+        <h1>Guest</h1>
+        <h2 id="guestCounter">0</h2>
+        <button onclick="guest1()">+1</button>
+        <button onclick="guest2()">+2</button>
+        <button onclick="guest3()">+3</button>
+    </div>
+
+    <button id="newGame-btn" onclick="newGame()">New Game</button>
+    
+    
+
+    <script src="scoreBoard.js"></script>
+</body>
+</html>
